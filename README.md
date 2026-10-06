@@ -50,7 +50,6 @@ Student records can be removed from the database when they are no longer require
 | **MySQL** | Database management |
 | **HTML** | Web page structure |
 | **CSS** | Styling and user interface |
-| **Jinja2** | Dynamic HTML templates |
 | **Git & GitHub** | Version control and project hosting |
 
 ---
