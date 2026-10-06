@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Update Student</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Update Student</h1>
+
+    <form method="POST">
+
+        <label>Student ID</label>
+
+        <input type="number"
+               name="id"
+               required>
+
+        <label>Select what you want to update</label>
+
+        <select name="field" required>
+
+            <option value="">-- Select Field --</option>
+
+            <option value="name">Name</option>
+
+            <option value="age">Age</option>
+
+            <option value="course">Course</option>
+
+            <option value="marks">Marks</option>
+
+        </select>
+
+        <label>New Value</label>
+
+        <input type="text"
+               name="value"
+               placeholder="Enter new value"
+               required>
+
+        <button type="submit">
+            Update Student
+        </button>
+
+    </form>
+
+    {% if message %}
+        <h3>{{ message }}</h3>
+    {% endif %}
+
+    <br>
+
+    <a href="/">Back to Home</a>
+
+</div>
+
+</body>
+</html>

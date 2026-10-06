@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Students</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+<div class="container">
+
+    <h1>Delete Students</h1>
+    <p>Search by student ID or name.</p>
+
+    <form method="GET" action="/delete">
+        <label>Search Student</label>
+        <input type="text"
+               name="search"
+               placeholder="Enter ID or name"
+               value="{{ search }}">
+
+        <button type="submit">Search</button>
+        <a href="/delete">Show All</a>
+    </form>
+
+    {% if message %}
+        <h3>{{ message }}</h3>
+    {% endif %}
+
+    <form method="POST"
+          onsubmit="return confirm('Delete the selected students permanently?');">
+
+        {% if students %}
+        <table>
+            <tr>
+                <th>Select</th>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Course</th>
+            </tr>
+
+            {% for student in students %}
+            <tr>
+                <td>
+                    <input type="checkbox"
+                           name="student_ids"
+                           value="{{ student[0] }}">
+                </td>
+                <td>{{ student[0] }}</td>
+                <td>{{ student[1] }}</td>
+                <td>{{ student[3] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <button type="submit">Delete Selected Students</button>
+
+        {% else %}
+        <p>No matching students found.</p>
+        {% endif %}
+    </form>
+
+    <a href="/">Back to Home</a>
+
+</div>
+</body>
+</html>
+

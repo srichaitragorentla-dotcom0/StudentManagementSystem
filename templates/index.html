@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Student Management System</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Student Management System</h1>
+
+    <p>Manage your students easily</p>
+
+    <div class="buttons">
+
+        <a href="/add">
+            <button>Add Student</button>
+        </a>
+
+        <a href="/view">
+            <button>View Students</button>
+        </a>
+
+        <a href="/search">
+            <button>Search Student</button>
+        </a>
+
+        <a href="/update">
+            <button>Update Student</button>
+        </a>
+
+        <a href="/delete">
+            <button>Delete Student</button>
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>
